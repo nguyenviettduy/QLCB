@@ -1,0 +1,39 @@
+﻿@model IEnumerable<QuanLyChuyenBay.Models.Planes>
+
+@{
+    ViewBag.Title = "InfoPlanes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>InfoPlanes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoHieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaloaiMB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoHieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaloaiMB)
+        </td>
+        <td>      
+            @Html.ActionLink("Details", "Details", new { soHieu = item.SoHieu }) |
+            @Html.ActionLink("Delete", "Delete", new { soHieu = item.SoHieu })
+        </td>
+    </tr>
+}
+
+</table>

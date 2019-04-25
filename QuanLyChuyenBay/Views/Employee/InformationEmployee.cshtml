@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QuanLyChuyenBay.Models.Employee>
+
+@{
+    ViewBag.Title = "InformationEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Information Employee</h2>
+
+<p>
+    @Html.ActionLink("Add Employee", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Luong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiNV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiNV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  maNV=item.MaNV  }) |
+            @Html.ActionLink("Details", "Details", new { maNV = item.MaNV }) |
+            @Html.ActionLink("Delete", "Delete", new { maNV = item.MaNV })
+        </td>
+    </tr>
+}
+
+</table>

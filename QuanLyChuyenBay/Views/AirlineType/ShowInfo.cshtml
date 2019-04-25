@@ -1,0 +1,39 @@
+﻿@model IEnumerable<QuanLyChuyenBay.Models.AirlineType>
+
+@{
+    ViewBag.Title = "ShowInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Information Airline Type</h2>
+
+<p>
+    @Html.ActionLink("Add Airline Type", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoaiMB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HangSX)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiMB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HangSX)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { maLoaiMb = item.MaLoaiMB }) |
+            @Html.ActionLink("Delete", "Delete", new { maLoaiMb = item.MaLoaiMB })
+        </td>
+    </tr>
+}
+
+</table>

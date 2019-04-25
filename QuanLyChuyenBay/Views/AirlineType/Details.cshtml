@@ -1,0 +1,35 @@
+﻿@model QuanLyChuyenBay.Models.AirlineType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AirlineType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLoaiMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoaiMB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HangSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HangSX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { maLoaiMB = Model.MaLoaiMB  }) |
+    @Html.ActionLink("Back to List", "ShowInfo", "AirlineType")
+</p>
